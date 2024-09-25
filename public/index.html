@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>Socket.IO Chat</title>
+    <style>
+      body { margin: 0; padding-bottom: 3rem; font-family: Arial, sans-serif; }
+      #form { background: rgba(0, 0, 0, 0.15); padding: 0.25rem; position: fixed; bottom: 0; left: 0; right: 0; display: flex; height: 3rem; }
+      #input { flex-grow: 1; padding: 0 1rem; }
+      #form > button { background: #333; color: white; border: none; padding: 0.5rem; }
+      #messages { list-style-type: none; margin: 0; padding: 0; }
+      #messages li { padding: 0.5rem; background-color: #efefef; margin-bottom: 0.5rem; }
+      #typing { color: gray; font-style: italic; }
+      #toggle-users-btn { background: #4CAF50; color: white; padding: 10px; border: none; cursor: pointer; }
+      #toggle-conn-btn { background: #f44336; color: white; padding: 10px; border: none; cursor: pointer; }
+      #online-users { list-style-type: none; margin: 0; padding: 0; display: none; } /* Initially hidden */
+    </style>
+  </head>
+  <body>
+    <ul id="messages"></ul>
+    <p id="typing"></p> <!-- Typing notification -->
+
+    <button id="toggle-users-btn">Show Online Users</button>
+    <button id="toggle-conn-btn">Disconnect</button>
+    
+    <ul id="online-users"></ul>
+    
+    <form id="form">
+      <input id="input" autocomplete="off" /><button>Send</button>
+    </form>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="script.js"></script> <!-- Link to the external JavaScript file -->
+  </body>
+</html>
